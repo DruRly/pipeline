@@ -7,6 +7,7 @@ var mountFolder = function (connect, dir) {
 module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  grunt.loadNpmTasks('grunt-haml');
 
   // configurable paths
   var yeomanConfig = {
@@ -33,9 +34,13 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass']
       },
+      haml: {
+        files: ['<%= yeoman.app %>/views/*'],
+        tasks: ['haml']
+      },
       livereload: {
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/{,*/}*.{html, haml}',
           '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -122,6 +127,16 @@ module.exports = function (grunt) {
           dest: '.tmp/spec',
           ext: '.js'
         }]
+      }
+    },
+    haml: {
+      index: {
+        src: "app/index.haml",
+        dest: "app/index.html"
+      },
+      main: {
+        src: "app/views/main.haml",
+        dest: "app/views/main.html"
       }
     },
     compass: {
