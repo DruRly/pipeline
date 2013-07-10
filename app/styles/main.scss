@@ -1,6 +1,11 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
 
+body {
+  width: 100%;
+  padding: 0;
+}
+
 .header {
   background-color: black;
   color: white;
