@@ -1,2 +1,15 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
+
+.header {
+  background-color: black;
+  color: white;
+}
+
+.app-title {
+  text-align: center;
+}
+
+.nav {
+  margin-bottom: 0;
+}
