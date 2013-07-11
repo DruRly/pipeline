@@ -7,17 +7,20 @@ body {
 }
 
 .container {
-  margin: 0;
   width: 100%;
 }
 
 .header {
   background-color: black;
   color: white;
+  height: 20px;
+  width:100%;
+  text-align: center;
 }
 
 .app-title {
   text-align: center;
+  display: inline-block;
 }
 
 .nav {
